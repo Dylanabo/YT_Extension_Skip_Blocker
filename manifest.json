@@ -15,7 +15,7 @@
     "default_title": "Youtube Skip Pub",
     "default_panel": "popup.html"
   },
-  "permissions": ["sidePanel", "contextMenus", "activeTab", "storage", "tabs"],
+  "permissions": ["sidePanel", "contextMenus", "activeTab", "storage", "tabs", "storage"],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
