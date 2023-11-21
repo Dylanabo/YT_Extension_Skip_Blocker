@@ -1,10 +1,20 @@
 let isActive = false;
 
+document.addEventListener('DOMContentLoaded', function () {
+  chrome.storage.local.get(['isActive'], function (result) {
+    isActive = result.isActive || false;
+    document.getElementById('status').textContent = isActive ? "Active" : "Inactive";
+    document.getElementById('active').checked = isActive;
+  });
+});
+
 if (document.getElementById("active")) {
 
   document.getElementById("active").addEventListener("click", function () {
     isActive = !isActive;
     document.getElementById("status").textContent = isActive ? "Active" : "Inactive";
+    chrome.storage.local.set({ 'isActive': isActive });
+
   });
 }
 
