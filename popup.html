@@ -14,7 +14,13 @@
         <input id="active" type="checkbox" />
         <span class="slider round"></span>
       </label>
-      <span id="status"></span>
+      <span id="status" class="status"></span>
+      <br />
+      <label class="switch">
+        <input id="newtabs" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+      <span id="tabs-status" class="status"></span>
     </div>
     <script src="popup.js"></script>
   </body>
@@ -23,6 +29,10 @@
 <style>
   body {
     color: aliceblue;
+  }
+
+  .status {
+    margin-left: 10px;
   }
 
   .switch {
