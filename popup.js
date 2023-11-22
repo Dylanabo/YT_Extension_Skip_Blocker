@@ -50,7 +50,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
 function checkYoutubeAndAct(tab) {
   // Exécuter la logique uniquement si l'extension est active
   if (isActive && tab.url && tab.url.includes("youtube.com")) {
-    console.log("Switch is active on YouTube");
     // Regarde si sur une vidéo
     if (tab.url.includes("watch")) {
       // Récupérer l'ID de la vidéo
@@ -58,13 +57,11 @@ function checkYoutubeAndAct(tab) {
       // Récupérer l'URL de la vidéo
       const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
       if (newTab) {
-        console.log("New tab");
         // Créer un nouvel onglet
         chrome.tabs.create({ url: videoUrl });
         // Et retourner sur l'onglet précédent
         chrome.tabs.update(tab.id, { url: "https://www.youtube.com/" });
       } else {
-        console.log("Same tab");
         // Remplacer l'URL de la page par celle de la vidéo
         chrome.tabs.update(tab.id, { url: videoUrl });
       }
