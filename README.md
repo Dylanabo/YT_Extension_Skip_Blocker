@@ -34,3 +34,7 @@ Pour le support, veuillez ouvrir un ticket dans la section Issues de ce dépôt.
 
 Licence
 MIT License
+
+
+## Bugs
+Relancement du plugins parfois nécessaire (a fix)
